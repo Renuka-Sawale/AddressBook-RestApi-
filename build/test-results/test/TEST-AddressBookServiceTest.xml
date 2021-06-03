@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AddressBookServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-06-03T15:47:54" hostname="ADMIN-PC" time="2.432">
+  <properties/>
+  <testcase name="givenAddressBookContactInJsonServer_WhenRetrieved_ShouldMatchTheResult()" classname="AddressBookServiceTest" time="2.432"/>
+  <system-out><![CDATA[Address Book contact entries from JSONServer:
+[
+  {
+    "id": 1,
+    "firstName": "Trisha",
+    "lastName": "Mishra",
+    "address": "Seawood",
+    "city": "Mumbai",
+    "state": "Maharastra",
+    "zip": "1234",
+    "phoneNo": "8921345687",
+    "email": "Trisha12@gmail.com"
+  },
+  {
+    "id": 2,
+    "firstName": "Avi",
+    "lastName": "Kashap",
+    "address": "Hsr",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "zip": "5678",
+    "phoneNo": "8121345689",
+    "email": "Avi19@gmail.com"
+  }
+]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
