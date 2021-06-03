@@ -16,4 +16,19 @@ public class AddressBookService {
     public void addAddressBook(AddressBookPersonData addressBookpersonData) {
         this.addressBookPersonDataList.add(addressBookpersonData);
     }
+
+    public void UpdateAddressBook(String firstName, String phoneNo) {
+        AddressBookPersonData addressBookPersonData = this.getAddressBookPersonData(firstName);
+        if (addressBookPersonData != null){
+            addressBookPersonData.phoneNo = phoneNo;
+        }
+    }
+
+    public AddressBookPersonData getAddressBookPersonData(String firstName) {
+        return this.addressBookPersonDataList.stream()
+                .filter(contactData -> contactData.firstName.equals(firstName))
+                .findFirst()
+                .orElse(null);
+    }
+
 }

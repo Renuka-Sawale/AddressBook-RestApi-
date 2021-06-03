@@ -62,4 +62,22 @@ public class AddressBookServiceTest {
         long entries = addressBookService.countEntries();
         Assertions.assertEquals(5, entries);
     }
+
+    @Test
+    public void givenNewPhoneNumberForPerson_WhenUpdated_ShouldGive200Response() {
+        AddressBookService addressBookService;
+        AddressBookPersonData[] arrayOfContacts = getAddressBookDataList();
+        addressBookService = new AddressBookService(Arrays.asList(arrayOfContacts));
+
+        addressBookService.UpdateAddressBook("Trisha", "9800000000");
+        AddressBookPersonData addressBookPersonData = addressBookService.getAddressBookPersonData("Trisha");
+
+        String addressJson = new Gson().toJson(addressBookPersonData);
+        RequestSpecification request = RestAssured.given();
+        request.header("Content-Type", "application/json");
+        request.body(addressJson);
+        Response response = request.put("/addressBook/" +addressBookPersonData.id);
+        int statusCode = response.getStatusCode();
+        Assertions.assertEquals(200, statusCode);
+    }
 }
