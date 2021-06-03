@@ -12,4 +12,8 @@ public class AddressBookService {
     public long countEntries() {
         return addressBookPersonDataList.size();
     }
+
+    public void addAddressBook(AddressBookPersonData addressBookpersonData) {
+        this.addressBookPersonDataList.add(addressBookpersonData);
+    }
 }
