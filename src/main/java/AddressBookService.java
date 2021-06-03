@@ -31,4 +31,8 @@ public class AddressBookService {
                 .orElse(null);
     }
 
+    public boolean deletePersonContact(String firstName) {
+        AddressBookPersonData addressBookPersonData = this.getAddressBookPersonData(firstName);
+        return addressBookPersonDataList.remove(addressBookPersonData);
+    }
 }
